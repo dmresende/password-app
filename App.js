@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Modal } from 'react-native';
 import Slider from '@react-native-community/slider';
+import { ModalPassword } from './src/assets/components/modal';
 
 let charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*()_-+=^[]{}'
 
 export default function App() {
   const [size, setSize] = useState(10);
-  const [password, setPasswordValue] = useState('')
+  const [passwordValue, setPasswordValue] = useState('');
+  const [modalVisible, setModalVisible] = useState(false)
 
   function generatorPassword() {
     let password = '';
@@ -16,10 +18,11 @@ export default function App() {
       // charAt pega caracater
       // Math.floor pega valor inteiro
       //Math.random pega valor aleatorio
-      password += charset.charAt(Math.floor(Math.random() * n))
+      password += charset.charAt(Math.floor(Math.random() * n));
     }
     //muda status
     setPasswordValue(password);
+    setModalVisible(true);
   }
 
   return (
@@ -53,6 +56,12 @@ export default function App() {
           Gerar senha
         </Text>
       </TouchableOpacity>
+
+      <Modal visible={modalVisible} animationType='fade' transparent={true}>
+        <ModalPassword password={passwordValue} handleClose={() => setModalVisible(false)} />
+      </Modal>
+
+
     </View>
   );
 }
