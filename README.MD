@@ -48,3 +48,11 @@ Muda o estado sem precisar 'relodar' a pagina.
 Recebe doid parametros sendo o primeiro a variavel que armazena o valor atual, e o segundo uma função que é resposável por alterar o estado baseando-se , por exemplo, em uma ação.
 
 <br>
+
+### BUILD ANDROID
+
+### Version e VersionCode
+
+Sempre lembrar de alterar a version e a versionCoda quando Buildar.
+
+`https://docs.expo.dev/build-reference/apk/`

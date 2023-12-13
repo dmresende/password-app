@@ -18,13 +18,22 @@
       "supportsTablet": true
     },
     "android": {
+      "android": {
+        "versionCode": 1
+      },
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.dmresende.passapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b7e03bd3-12a8-4888-9eb6-ac6e33d72708"
+      }
     }
   }
 }

@@ -1,20 +1,46 @@
-import { StyleSheet, Text, View, TouchableOpacity, Pressable } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, Pressable, Alert } from "react-native";
 import * as Clipboard from "expo-clipboard";
+import useStorage from "../../hooks/useStorage";
 
 export function ModalPassword({ password, handleClose }) {
+    const { saveItem } = useStorage();
 
     async function handleCopyPassword() {
         await Clipboard.setStringAsync(password);
-        alert('Senha copiada com sucesso!');
+        await saveItem('@pass', password)
+
+        // Alert.alert('Atenção', 'Senha salva com sucesso!');
         handleClose();
     }
+
+    //rafatorar alerts
+    const showCopyAlert = () => {
+        Alert.alert(
+            'Confirmação',
+            'Senha copiada com sucesso!',
+            [
+                { text: 'Ok', onPress: handleCopyPassword }
+            ],
+        );
+    };
+
+    const showSalvedAlert = () => {
+        Alert.alert(
+            'Confirmação',
+            'Senha Salva com sucesso!',
+            [
+                { text: 'Ok', onPress: handleCopyPassword }
+            ],
+        );
+    };
+
 
     return (
         <View style={styles.container}>
             <View style={styles.content}>
                 <Text style={styles.title}>Senha Gerada!</Text>
 
-                <Pressable style={styles.innerPassword} onLongPress={handleCopyPassword}>
+                <Pressable style={styles.innerPassword} onLongPress={showCopyAlert}>
                     <Text style={styles.text}>
                         {password}
                     </Text>
@@ -25,7 +51,11 @@ export function ModalPassword({ password, handleClose }) {
                         <Text style={styles.buttonText}>Voltar</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={[styles.button, styles.buttonSave]} onpress={handleClose}>
+                    <TouchableOpacity
+                        style={[styles.button, styles.buttonSave]}
+                        onPress={showSalvedAlert}
+                    >
+
                         <Text style={styles.buttonSaveText}>Salvar</Text>
                     </TouchableOpacity>
                 </View>
