@@ -44,8 +44,7 @@ export function Home() {
                     value={size}
 
                     // Propriedade slider que permite fazer a troca do valor
-                    onValueChange={(value) => setSize(value.toFixed(0))}
-
+                    onValueChange={(value) => setSize(parseInt(value.toFixed(0), 10))}
                 />
             </View>
             <TouchableOpacity

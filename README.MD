@@ -60,3 +60,19 @@ Sempre lembrar de alterar a version e a versionCoda quando Buildar.
 ### CHECK APP
 
 `npx expo-doctor@latest`
+
+### CASO TENHA PROBLEMA COM EXPO  EAS CLI
+Expo EAS pode solicitar suas credenciais para uso.
+
+Limpe de Sessão Expo:
+Tente limpar a sessão Expo. Execute o seguinte comando para limpar a sessão e, em seguida, tente novamente o expo eas login:
+
+`expo logout`
+`expo login`
+
+Isso vai desconectar você e, em seguida, fazer o login novamente.
+
+Atualização do Expo CLI:
+Certifique-se de que está usando a versão mais recente do Expo CLI. Você pode atualizar o Expo CLI com o seguinte comando:
+
+`npm install -g expo-cli`
