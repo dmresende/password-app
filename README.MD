@@ -61,7 +61,8 @@ Sempre lembrar de alterar a version e a versionCoda quando Buildar.
 
 `npx expo-doctor@latest`
 
-### CASO TENHA PROBLEMA COM EXPO  EAS CLI
+### CASO TENHA PROBLEMA COM EXPO EAS CLI
+
 Expo EAS pode solicitar suas credenciais para uso.
 
 Limpe de Sessão Expo:
@@ -76,3 +77,6 @@ Atualização do Expo CLI:
 Certifique-se de que está usando a versão mais recente do Expo CLI. Você pode atualizar o Expo CLI com o seguinte comando:
 
 `npm install -g expo-cli`
+
+//#EBFF00
+//#392DE9

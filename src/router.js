@@ -8,12 +8,13 @@ const Tab = createBottomTabNavigator();
 // configuração de rotas
 export function Routes() {
     return (
-
         <Tab.Navigator>
             <Tab.Screen
                 name='home'
                 component={Home}
                 options={{
+                    tabBarShowLabel: false,
+                    tabBarShowLabel: false,
                     headerShown: false,
                     tabBarIcon: ({ focused, size, color }) => {
                         if (focused) {
@@ -37,7 +38,6 @@ export function Routes() {
                             return <Ionicons size={size} color={color} name='lock-closed' />
                         }
                         return <Ionicons size={size} color={color} name='lock-closed-outline' />
-
                     }
                 }}
             />

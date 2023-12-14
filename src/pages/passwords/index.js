@@ -50,7 +50,6 @@ export function Password() {
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.title}>Minhas Senhas</Text>
-
             </View >
             <View style={styles.content}>
                 <FlatList
@@ -63,12 +62,8 @@ export function Password() {
                         removePassword={() => {
                             handleDeletePassword(item)
                         }}
-
                     />}
-
                 />
-
-
             </View>
         </SafeAreaView>
     )
@@ -99,5 +94,6 @@ const styles = StyleSheet.create({
     list: {
         flex: 1,
         paddingTop: 14,
+        margin: 10
     }
 })

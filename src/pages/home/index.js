@@ -27,7 +27,7 @@ export function Home() {
 
     return (
         <View style={styles.container}>
-            <Image style={styles.logo} source={require("../../assets/logo.png")} />
+            <Image style={styles.logo} source={require("../../assets/icon.png")} />
             <StatusBar style="auto" />
 
             <Text style={styles.title}>{size} caracteres</Text>
@@ -74,6 +74,8 @@ const styles = StyleSheet.create({
     },
     logo: {
         marginBottom: 60,
+        width: 200,
+        height: 200
     },
     title: {
         fontSize: 30,

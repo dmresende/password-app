@@ -1,6 +1,7 @@
-import { StyleSheet, Text, View, TouchableOpacity, Pressable, Alert } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, Pressable, Alert, Image } from "react-native";
 import * as Clipboard from "expo-clipboard";
 import useStorage from "../../hooks/useStorage";
+
 
 export function ModalPassword({ password, handleClose }) {
     const { saveItem } = useStorage();
@@ -41,9 +42,11 @@ export function ModalPassword({ password, handleClose }) {
                 <Text style={styles.title}>Senha Gerada!</Text>
 
                 <Pressable style={styles.innerPassword} onLongPress={showCopyAlert}>
+
                     <Text style={styles.text}>
                         {password}
                     </Text>
+                    <Image style={styles.imgCopy} source={require("../../assets/copy.png")} />
                 </Pressable>
 
                 <View style={styles.buttonArea}>
@@ -83,15 +86,22 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: '#000',
+        color: '#1d1d1d',
         marginBottom: 24
     },
     innerPassword: {
-        backgroundColor: '#0e0e0e',
+        backgroundColor: '#1d1d1d',
         width: '90%',
         padding: 14,
         borderRadius: 8,
+        flexDirection: 'row',
+        justifyContent: 'space-between'
 
+    },
+    imgCopy: {
+        width: 20,
+        height: 20,
+        padding: 0
     },
     text: {
         color: '#FFF',
@@ -122,3 +132,4 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     }
 })
+
