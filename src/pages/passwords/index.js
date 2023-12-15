@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useIsFocused } from '@react-navigation/native'
 import useStorage from '../../hooks/useStorage';
 
-import { PasswordItem } from './components/passwordItem';
+import { PasswordItem } from './components/passwordItem-components';
 
 
 export function Password() {
@@ -29,22 +29,6 @@ export function Password() {
 
     }
 
-    const showDeleteAlert = () => {
-        Alert.alert(
-            'Confirmação',
-            'Tem certeza que deseja salvar a senha?',
-            [
-                {
-                    text: 'Cancelar',
-                    onPress: () => console.log('Cancel Pressed'),
-                    style: 'cancel',
-                },
-                { text: 'Salvar', onPress: handleCopyPassword },
-            ],
-            { cancelable: false }
-        );
-    };
-
 
     return (
         <SafeAreaView style={styles.container}>
@@ -58,7 +42,7 @@ export function Password() {
                     keyExtractor={(item) => {
                         String(item)
                     }}
-                    renderItem={({ item }) => <PasswordItem data={item}
+                    renderItem={({ item }) => <PasswordItem data={item} key={undefined}
                         removePassword={() => {
                             handleDeletePassword(item)
                         }}
@@ -75,7 +59,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     header: {
-        backgroundColor: '#392de9',
+        backgroundColor: '#2D3142',
         paddingTop: 58,
         paddingBottom: 14,
         paddingLeft: 14,
@@ -85,7 +69,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 18,
-        color: '#FFF',
+        color: '#BFC0C0',
         fontWeight: 'bold'
     },
     content: {

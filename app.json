@@ -4,11 +4,13 @@
     "slug": "pass-app",
     "version": "1.0.0",
     "orientation": "portrait",
+
     "icon": "./src/assets/icon.png",
     "userInterfaceStyle": "light",
+
     "splash": {
-      "image": "./src/assets/icon.png",
-      "resizeMode": "center",
+      "image": "./src/assets/lock.png",
+      "resizeMode": "contain",
       "backgroundColor": "#ffffff"
 
     },
@@ -21,7 +23,7 @@
     "android": {
         "versionCode": 1,
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/adaptive-icon.png",
+        "foregroundImage": "./src/assets/adaptive-icon.png.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.dmresende.passapp"

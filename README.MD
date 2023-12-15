@@ -56,6 +56,7 @@ Recebe doid parametros sendo o primeiro a variavel que armazena o valor atual, e
 Sempre lembrar de alterar a version e a versionCoda quando Buildar.
 
 `https://docs.expo.dev/build-reference/apk/`
+`eas build -p android --profile preview`
 
 ### CHECK APP
 
@@ -78,5 +79,20 @@ Certifique-se de que está usando a versão mais recente do Expo CLI. Você pode
 
 `npm install -g expo-cli`
 
-//#EBFF00
-//#392DE9
+### Cores em teste
+#EBFF00
+#392DE9
+#4979B1
+#734AB6
+#7142BA
+#F3F3F3FF
+
+
+Paleta 2:
+#2D3142
+#4F5D75
+#BFC0C0
+#FFFFFF
+#EF8354
+
+//refatorando . . . .

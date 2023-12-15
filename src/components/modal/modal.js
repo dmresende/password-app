@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, Pressable, Alert, Image } from "react-native";
 import * as Clipboard from "expo-clipboard";
 import useStorage from "../../hooks/useStorage";
+import { showCopyAlert, showSavedAlert } from "../../uteis/alerts";
 
 
 export function ModalPassword({ password, handleClose }) {
@@ -10,44 +11,24 @@ export function ModalPassword({ password, handleClose }) {
         await Clipboard.setStringAsync(password);
         await saveItem('@pass', password)
 
-        // Alert.alert('Atenção', 'Senha salva com sucesso!');
         handleClose();
     }
-
-    //rafatorar alerts
-    const showCopyAlert = () => {
-        Alert.alert(
-            'Confirmação',
-            'Senha copiada com sucesso!',
-            [
-                { text: 'Ok', onPress: handleCopyPassword }
-            ],
-        );
-    };
-
-    const showSalvedAlert = () => {
-        Alert.alert(
-            'Confirmação',
-            'Senha Salva com sucesso!',
-            [
-                { text: 'Ok', onPress: handleCopyPassword }
-            ],
-        );
-    };
-
 
     return (
         <View style={styles.container}>
             <View style={styles.content}>
                 <Text style={styles.title}>Senha Gerada!</Text>
 
-                <Pressable style={styles.innerPassword} onLongPress={showCopyAlert}>
+                <Pressable
+                    style={styles.innerPassword}
+                    onLongPress={() => showCopyAlert(handleCopyPassword)}>
 
                     <Text style={styles.text}>
                         {password}
                     </Text>
                     <Image style={styles.imgCopy} source={require("../../assets/copy.png")} />
                 </Pressable>
+                <Text style={styles.textInfor}>Pressione e segure para copiar a senha</Text>
 
                 <View style={styles.buttonArea}>
                     <TouchableOpacity style={styles.button} onPress={handleClose}>
@@ -56,7 +37,7 @@ export function ModalPassword({ password, handleClose }) {
 
                     <TouchableOpacity
                         style={[styles.button, styles.buttonSave]}
-                        onPress={showSalvedAlert}
+                        onPress={() => showSavedAlert(handleCopyPassword)}
                     >
 
                         <Text style={styles.buttonSaveText}>Salvar</Text>
@@ -75,7 +56,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     content: {
-        backgroundColor: '#FFF',
+        backgroundColor: '#FFFFFF',
         width: '85%',
         padding: 24,
         paddingBottom: 24,
@@ -86,11 +67,11 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: '#1d1d1d',
+        color: '#2D3142',
         marginBottom: 24
     },
     innerPassword: {
-        backgroundColor: '#1d1d1d',
+        backgroundColor: '#4F5D75',
         width: '90%',
         padding: 14,
         borderRadius: 8,
@@ -103,8 +84,11 @@ const styles = StyleSheet.create({
         height: 20,
         padding: 0
     },
+    textInfor: {
+        color: '#BFC0C0'
+    },
     text: {
-        color: '#FFF',
+        color: '#FFFFFF',
         textAlign: 'center'
     },
     buttonArea: {
@@ -124,11 +108,11 @@ const styles = StyleSheet.create({
     },
     buttonText: {},
     buttonSave: {
-        backgroundColor: '#392de9',
+        backgroundColor: '#EF8354',
         borderRadius: 8,
     },
     buttonSaveText: {
-        color: '#FFF',
+        color: '#FFFFFF',
         fontWeight: 'bold',
     }
 })

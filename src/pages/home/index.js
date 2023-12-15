@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableOpacity, Modal } from 'react-native';
 import Slider from '@react-native-community/slider';
-import { ModalPassword } from '../../components/modal';
+import { ModalPassword } from '../../components/modal/modal';
 
-let charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*()_-+=^[]{}'
+
+let charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*_-+=^'
 
 export function Home() {
     const [size, setSize] = useState(10);
@@ -38,9 +39,9 @@ export function Home() {
                     style={styles.areaSlider}
                     minimumValue={6}
                     maximumValue={20}
-                    maximumTrackTintColor='#000'
-                    minimumTrackTintColor='#33CC66'
-                    thumbTintColor='#392de9'
+                    maximumTrackTintColor='#2D3142'
+                    minimumTrackTintColor='#2D3142'
+                    thumbTintColor='#4F5D75'
                     value={size}
 
                     // Propriedade slider que permite fazer a troca do valor
@@ -57,8 +58,9 @@ export function Home() {
             </TouchableOpacity>
 
             <Modal visible={modalVisible} animationType='fade' transparent={true}>
-                <ModalPassword password={passwordValue} handleClose={() => setModalVisible(false)} />
+                <ModalPassword password={passwordValue} handleClose={() => setModalVisible(false)}  />
             </Modal>
+
 
 
         </View>
@@ -80,12 +82,13 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 30,
         fontWeight: 'bold',
+        color: '#2D3142',
     },
     area: {
         marginTop: 14,
         marginBottom: 14,
         width: "80%",
-        backgroundColor: '#FFF',
+        backgroundColor: '#BFC0C0',
         borderRadius: 8,
         padding: 6,
 
@@ -94,7 +97,8 @@ const styles = StyleSheet.create({
         height: 50,
     },
     button: {
-        backgroundColor: '#392de9',
+        // backgroundColor: '#392de9',
+        backgroundColor: '#EF8354',
         width: "80%",
         height: 50,
         alignItems: "center",
@@ -103,7 +107,7 @@ const styles = StyleSheet.create({
         marginBottom: 18,
     },
     buttonText: {
-        color: '#FFF',
+        color: '#FFFFFF',
         fontSize: 20,
     },
 });
