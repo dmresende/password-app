@@ -1,7 +1,8 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home } from './pages/home';
-import { Password } from './pages/passwords';
+import { Password } from './pages/passwords/index';
 import { Ionicons } from '@expo/vector-icons'
+import {theme} from './styles/theme'
 
 const Tab = createBottomTabNavigator();
 
@@ -18,9 +19,9 @@ export function Routes() {
                     headerShown: false,
                     tabBarIcon: ({ focused, size, color }) => {
                         if (focused) {
-                            return <Ionicons size={size} color={'#2D3142'} name='home' />
+                            return <Ionicons size={size} color={theme.colors.secondary} name='home' />
                         }
-                        return <Ionicons size={size} color={'#2D3142'} name='home-outline' />
+                        return <Ionicons size={size} color={theme.colors.secondary} name='home-outline' />
 
                     }
                 }}
@@ -35,9 +36,9 @@ export function Routes() {
                     headerShown: false,
                     tabBarIcon: ({ focused, size, color }) => {
                         if (focused) {
-                            return <Ionicons size={size} color={'#2D3142'} name='lock-closed' />
+                            return <Ionicons size={size} color={theme.colors.secondary} name='lock-closed' />
                         }
-                        return <Ionicons size={size} color={'#2D3142'} name='lock-closed-outline' />
+                        return <Ionicons size={size} color={theme.colors.secondary} name='lock-closed-outline' />
                     }
                 }}
             />

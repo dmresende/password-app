@@ -5,11 +5,11 @@
     "version": "1.0.0",
     "orientation": "portrait",
 
-    "icon": "./src/assets/icon.png",
+    "icon": "./src/assets/image/icon.png",
     "userInterfaceStyle": "light",
 
     "splash": {
-      "image": "./src/assets/lock.png",
+      "image": "./src/assets/image/lock.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
 
@@ -23,13 +23,13 @@
     "android": {
         "versionCode": 1,
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/adaptive-icon.png.png",
+        "foregroundImage": "./src/assets/image/adaptive-icon.png.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.dmresende.passapp"
     },
     "web": {
-      "favicon": "./src/assets/favicon.png"
+      "favicon": "./src/assets/image/favicon.png"
     },
     "extra": {
       "eas": {

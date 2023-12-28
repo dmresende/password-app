@@ -1,0 +1,36 @@
+{
+  "common": {
+    "developedBy": "Desenvolvido por",
+    "loading": "Carregando...",
+    "logof": "Tem certeza que deseja sair?",
+    "appVersion": "APP %{version}",
+    "restVersion": "REST %{version}",
+    "noConnection": "Verifique sua conexão com a internet",
+    "serverAlert": "Não se esqueça de fazer a configuração do servidor",
+    "notInformed": "Não Informado"
+  },
+  "locationTask": {
+    "title": "Compartilhamento Ativo",
+    "body": "Você está compartilhando sua localização atual"
+  },
+  "usageTips": {
+    "title": "Atenção",
+    "subTitle": "Baixando...",
+    "message": "Realmente deseja baixar as dicas de uso?",
+    "messageSuccess": "PDF baixado com sucesso! Clique para abri-lo",
+    "downloadError": "Erro ao tentar baixar o PDF",
+    "buttons": {
+      "ok": "OK",
+      "no": "Não",
+      "later": "Depois",
+      "download": "Baixar",
+      "downloadAgain": "Tentar Novamente",
+      "wait": "Aguarde"
+    },
+    "errors": {
+      "downloadNotFound": "PDF não foi encontrada no servidor, tente novamente mais tarde",
+      "downloadError": "Ocorreu um erro ao baixar a PDF",
+      "downloadOpenlError": "Ocorreu um erro ao abrir o PDF"
+    }
+  }
+}

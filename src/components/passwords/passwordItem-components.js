@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { View, Pressable, Text, TextInput, TouchableOpacity } from "react-native";
+import { View, Pressable, TextInput, TouchableOpacity } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
-import { showDeleteAlert } from "../../../uteis/alerts";
+import { showDeleteAlert } from "../alerts/alerts";
 import { passwordItemStyles } from "./styles";
+import {theme} from '../../styles/theme';
 
 export function PasswordItem({ data, removePassword }) {
     const [hidePass, setHidePass] = useState(true);
@@ -20,9 +21,9 @@ export function PasswordItem({ data, removePassword }) {
                 <TouchableOpacity onPress={() => setHidePass(!hidePass)}>
                     {/* condição que mostra a troca de ícone */}
                     {hidePass ?
-                        <Ionicons name="eye-off" color='#BFC0C0' size={25} />
+                        <Ionicons name="eye-off" color={theme.colors.textInfor} size={25} />
                         :
-                        <Ionicons name="eye" color='#FFFFFF' size={25} />
+                        <Ionicons name="eye" color={theme.colors.textColor} size={25} />
                     }
                 </TouchableOpacity>
             </Pressable>
