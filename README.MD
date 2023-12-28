@@ -96,3 +96,5 @@ Paleta 2:
 #EF8354
 
 //refatorando . . . .
+
+Ajustar idioma.
