@@ -98,3 +98,4 @@ Paleta 2:
 //refatorando . . . .
 
 Ajustar idioma.
+
