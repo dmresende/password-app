@@ -56,7 +56,10 @@ Recebe doid parametros sendo o primeiro a variavel que armazena o valor atual, e
 Sempre lembrar de alterar a version e a versionCoda quando Buildar.
 
 `https://docs.expo.dev/build-reference/apk/`
+Comando:
 `eas build -p android --profile preview`
+ou
+`npm run build`
 
 ### CHECK APP
 

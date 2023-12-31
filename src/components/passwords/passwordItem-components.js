@@ -7,6 +7,7 @@ import {theme} from '../../styles/theme';
 
 export function PasswordItem({ data, removePassword }) {
     const [hidePass, setHidePass] = useState(true);
+    
 
     return (
         <View>
@@ -14,17 +15,20 @@ export function PasswordItem({ data, removePassword }) {
                 <TextInput
                     style={passwordItemStyles.text}
                     secureTextEntry={hidePass}
+                    editable={false}
                 >{data}
                 </TextInput>
-
-                {/* esconde senha */}
-                <TouchableOpacity onPress={() => setHidePass(!hidePass)}>
+        
+                <TouchableOpacity style={passwordItemStyles.button} onPress={() => setHidePass(!hidePass) }>
+                    {/* esconde senha */}
                     {/* condição que mostra a troca de ícone */}
+
                     {hidePass ?
                         <Ionicons name="eye-off" color={theme.colors.textInfor} size={25} />
                         :
                         <Ionicons name="eye" color={theme.colors.textColor} size={25} />
                     }
+
                 </TouchableOpacity>
             </Pressable>
         </View>

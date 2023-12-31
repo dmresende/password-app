@@ -13,5 +13,6 @@ export const passwordItemStyles = StyleSheet.create({
     },
     text: {
         color: '#FFFFFF',
-    }
+    },
+    
 });

@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     },
     header: {
         backgroundColor: theme.colors.secondary,
-        paddingTop: 58,
+        paddingTop: 48,
         paddingBottom: 14,
         paddingLeft: 14,
         paddingRight: 14,
@@ -15,8 +15,8 @@ export const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     title: {
-        fontSize: 18,
-        color: theme.colors.textInfor,
+        fontSize: 25,
+        color: theme.colors.textColor,
         fontWeight: 'bold'
     },
     content: {

@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { theme } from './styles/theme';
 import Welcome from '../src/pages/welcome';
 import SignIn from '../src/pages/signIn';
+import  Register  from './pages/register';
 import { Home } from './pages/home';
 import { Password } from './pages/passwords/index';
 
@@ -19,6 +20,7 @@ export function Routes() {
       <Stack.Navigator initialRouteName="Welcome" screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="SignIn" component={SignIn} />
+        <Stack.Screen name="Register" component={Register}/>
         <Stack.Screen
           name="MainTabs"
           component={MainTabs}
