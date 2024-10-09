@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const useStorage = () => {
+export const useStorage = () => {
 
     //busca itens salvos
     const getItem = async (key) => {
@@ -18,7 +18,12 @@ const useStorage = () => {
     const saveItem = async (key, value) => {
         try {
             let passwords = await getItem(key);
-            passwords.push(value)
+            // Verifica se passwords é um array
+            if (!Array.isArray(passwords)) {
+                passwords = [];
+            }
+            // Adiciona o novo valor ao array
+            passwords.push(value);
             await AsyncStorage.setItem(key, JSON.stringify(passwords));
 
         } catch (error) {
@@ -30,19 +35,18 @@ const useStorage = () => {
     const removeItem = async (key, item) => {
         try {
             let passwords = await getItem(key);
-
-            //remove item que queremo remover
-            let myPasswords = passwords.filter((password) => {
-                //retorna lista sem o item removido.
-                return (password !== item)
-            });
-
-
+            // Verifica se passwords é um array
+            if (!Array.isArray(passwords)) {
+                return [];
+            }
+            // Remove o item que queremos remover
+            let myPasswords = passwords.filter((password) => password.id !== item.id);
             await AsyncStorage.setItem(key, JSON.stringify(myPasswords));
             return myPasswords;
 
         } catch (erro) {
             console.log('Eror ao deletar', erro);
+            return [];
         }
 
     }
@@ -53,5 +57,3 @@ const useStorage = () => {
         removeItem,
     }
 }
-
-export default useStorage
